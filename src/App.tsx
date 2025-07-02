@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './components/Home';
-// import CategoryManager from './components/CategoryManager';
+import CategoriesPage from './components/CategoriesPage';
 import Calculations from './components/Calculations';
 import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/material';
 
@@ -63,7 +63,7 @@ const App: React.FC = () => (
     <NavBar />
     <Routes>
       <Route path="/" element={<Home />} />
-      {/* <Route path="/categories" element={<CategoryManager />} /> */}
+      <Route path="/categories" element={<CategoriesPage />} />
       <Route path="/calculations" element={<Calculations />} />
     </Routes>
   </Router>

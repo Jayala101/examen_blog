@@ -1,27 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Typography, Button, Stack, Paper } from '@mui/material';
-import CategoryForm from './CategoryForm';
-import CategoryList from './CategoryList';
+
 
 
 const Home: React.FC = () => {
-  const [categories, setCategories] = useState<{ name: string; description: string }[]>([]);
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [error, setError] = useState('');
 
-  const handleAddCategory = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim()) {
-      setError('El nombre es obligatorio');
-      return;
-    }
-    setCategories([...categories, { name, description }]);
-    setName('');
-    setDescription('');
-    setError('');
-  };
 
   return (
     <Box
@@ -92,18 +76,7 @@ const Home: React.FC = () => {
       />
     </Paper>
 
-    {/* Registro de Categoría en Home */}
-    <Box sx={{ width: '100%', maxWidth: 600, mt: 4 }}>
-      <CategoryForm
-        name={name}
-        description={description}
-        error={error}
-        onNameChange={setName}
-        onDescriptionChange={setDescription}
-        onSubmit={handleAddCategory}
-      />
-      <CategoryList categories={categories} />
-    </Box>
+    {/* ...existing code... */}
     <Stack
       direction={{ xs: 'column', sm: 'row' }}
       spacing={2}
